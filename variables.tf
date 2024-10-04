@@ -21,3 +21,9 @@ variable "vpc_tags" {
   type    = map(any)
   default = {}
 }
+
+# Internet GateWay variables
+variable "igw_tags" {
+  type    = map(any)
+  default = {}
+}
