@@ -58,3 +58,13 @@ variable "public_subnet_tags" {
   type    = map(any)
   default = {}
 }
+
+variable "private_subnet_tags" {
+  type    = map(any)
+  default = {}
+}
+
+variable "database_subnet_tags" {
+  type    = map(any)
+  default = {}
+}

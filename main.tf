@@ -46,7 +46,7 @@ resource "aws_subnet" "private" {
   tags = merge(
     local.module_tags,
     { Name = "${local.resource_name}-private-${local.selected_azs_names[count.index]}" },
-    var.public_subnet_tags
+    var.private_subnet_tags
   )
 }
 
@@ -60,6 +60,6 @@ resource "aws_subnet" "database" {
   tags = merge(
     local.module_tags,
     { Name = "${local.resource_name}-database-${local.selected_azs_names[count.index]}" },
-    var.public_subnet_tags
+    var.database_subnet_tags
   )
 }

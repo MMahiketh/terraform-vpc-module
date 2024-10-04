@@ -39,7 +39,11 @@ This module is going to create below resources.
          public-subnet   private-subnet   database-subnet
 
 
-* *public_subnet_tags* (Optional) `map(string)` : User can supply tags to attach to created public subnet. By default it is empty.
+* *public_subnet_tags* (Optional) `map(string)` : User can supply tags to attach to created Public subnet. By default it is empty.
+
+* *private_subnet_tags* (Optional) `map(string)` : User can supply tags to attach to created Private subnet. By default it is empty.
+
+* *database_subnet_tags* (Optional) `map(string)` : User can supply tags to attach to created Database subnet. By default it is empty.
 
 
 ## Outputs
