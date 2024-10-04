@@ -20,6 +20,8 @@ This module is going to create below resources.
 
 * *igw_tags* (Optional) `map(string)` : User can supply tags to attach to created Internet Gateway. By default it is empty.
 
+* *select_azs* (Optional) `list(number)` : User can choose Availability Zones to create subnets. By default it is set to [ 0, 1 ]. You can choose values form 0 to 5. It should be list of 2 distinct elements
+
 
 ## Outputs
 
@@ -27,3 +29,6 @@ This module is going to create below resources.
 
 * *igw_id* : ID of the created Internet Gateway.
 
+* *all_azs_info* : Info about all Availability Zones in the region.
+
+* *selected_azs* : List of Availability Zones that are selected.

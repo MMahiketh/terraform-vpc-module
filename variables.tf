@@ -27,3 +27,14 @@ variable "igw_tags" {
   type    = map(any)
   default = {}
 }
+
+# Select Availability zones
+variable "select_azs" {
+  type    = list(number)
+  default = [0, 1]
+
+  validation {
+    condition     = length(distinct(var.select_azs)) == 2 && min(var.select_azs...) >= 0 && max(var.select_azs...) < 6
+    error_message = "selected_azs value must be a list of numbers with 2 distinct elements and elements value should be anything from the list=[0,1,2,3,4,5] "
+  }
+}
