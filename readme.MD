@@ -26,8 +26,8 @@ This module is going to create below resources.
     
     Default values are: 
 
->     [
-        ["10.0.11.0/24", "10.0.12.0/24", "10.0.13.0/24"],   --> AZ1 subnet CIDRs
+>   [
+>       ["10.0.11.0/24", "10.0.12.0/24", "10.0.13.0/24"],   --> AZ1 subnet CIDRs
         ["10.0.21.0/24", "10.0.22.0/24", "10.0.23.0/24"]    --> AZ2 subnet CIDRs
     ]          ^               ^               ^
                |               |               |      
