@@ -11,9 +11,9 @@ This module is going to create below resources.
 
 ## Inputs
 
-* *project* (Mandatory) `string` : User must provide their project name.
+* ***project*** (Mandatory) `string` : User must provide their project name.
 
-* *environment* (Mandatory) `string` : User must provide the envirmonment(PROD, DEV, QA).
+* ***environment*** (Mandatory) `string` : User must provide the envirmonment(PROD, DEV, QA).
 
 * *vpc_cidr_block* (Mandatory) `string` : User must provide CIDR for VPC.
 
