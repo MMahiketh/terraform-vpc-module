@@ -15,3 +15,11 @@ output "all_azs_info" {
 output "selected_azs" {
   value = local.selected_azs_names
 }
+
+output "az1_subnet_cidrs" {
+  value = var.subnet_cidrs[0]
+}
+
+output "az2_subnet_cidrs" {
+  value = var.subnet_cidrs[1]
+}

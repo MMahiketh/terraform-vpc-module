@@ -35,6 +35,19 @@ variable "select_azs" {
 
   validation {
     condition     = length(distinct(var.select_azs)) == 2 && min(var.select_azs...) >= 0 && max(var.select_azs...) < 6
-    error_message = "selected_azs value must be a list of numbers with 2 distinct elements and elements value should be anything from the list=[0,1,2,3,4,5] "
+    error_message = "selected_azs value must be a list of numbers with 2 distinct elements and elements value should be anything from the list=[0,1,2,3,4,5]."
+  }
+}
+
+variable "subnet_cidrs" {
+  type = list(list(string))
+  default = [
+    ["10.0.11.0/24", "10.0.12.0/24", "10.0.13.0/24"],
+    ["10.0.21.0/24", "10.0.22.0/24", "10.0.23.0/24"]
+  ]
+
+  validation {
+    condition     = length(var.subnet_cidrs[0]) == 3 && length(var.subnet_cidrs[1]) == 3
+    error_message = "subnet_cidrs value must be list of 2 lists, each list should contain 3 cidrs. All values should be distinct."
   }
 }
