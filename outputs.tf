@@ -23,3 +23,7 @@ output "az1_subnet_cidrs" {
 output "az2_subnet_cidrs" {
   value = var.subnet_cidrs[1]
 }
+
+output "public_subnet_ids" {
+  value = aws_subnet.public[*].id
+}

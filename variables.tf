@@ -39,6 +39,7 @@ variable "select_azs" {
   }
 }
 
+#All subnet's cidrs
 variable "subnet_cidrs" {
   type = list(list(string))
   default = [
@@ -50,4 +51,10 @@ variable "subnet_cidrs" {
     condition     = length(var.subnet_cidrs[0]) == 3 && length(var.subnet_cidrs[1]) == 3
     error_message = "subnet_cidrs value must be list of 2 lists, each list should contain 3 cidrs. All values should be distinct."
   }
+}
+
+#subnets
+variable "public_subnet_tags" {
+  type    = map(any)
+  default = {}
 }
