@@ -33,3 +33,31 @@ resource "aws_subnet" "public" {
     var.public_subnet_tags
   )
 }
+
+resource "aws_subnet" "private" {
+  count = length(var.subnet_cidrs)
+
+  vpc_id            = aws_vpc.main.id
+  cidr_block        = var.subnet_cidrs[count.index][1]
+  availability_zone = local.selected_azs_names[count.index]
+
+  tags = merge(
+    local.module_tags,
+    { Name = "${local.resource_name}-private-${local.selected_azs_names[count.index]}" },
+    var.public_subnet_tags
+  )
+}
+
+resource "aws_subnet" "database" {
+  count = length(var.subnet_cidrs)
+
+  vpc_id            = aws_vpc.main.id
+  cidr_block        = var.subnet_cidrs[count.index][2]
+  availability_zone = local.selected_azs_names[count.index]
+
+  tags = merge(
+    local.module_tags,
+    { Name = "${local.resource_name}-database-${local.selected_azs_names[count.index]}" },
+    var.public_subnet_tags
+  )
+}

@@ -53,3 +53,7 @@ This module is going to create below resources.
 * *az2_subnet_cidrs* : List of Public, Private and Database subnet CIDRs in AZ2.
 
 * *public_subnet_ids* : List of Public subnet IDs.
+
+* *private_subnet_ids* : List of Private subnet IDs.
+
+* *database_subnet_ids* : List of Database subnet IDs.
