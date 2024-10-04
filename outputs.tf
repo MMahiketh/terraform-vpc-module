@@ -13,5 +13,5 @@ output "all_azs_info" {
 }
 
 output "selected_azs" {
-  value = [local.selected_az1, local.selected_az2]
+  value = local.selected_azs_names
 }
