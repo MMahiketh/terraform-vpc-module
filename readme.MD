@@ -4,6 +4,9 @@ This module is going to create below resources.
 
 * VPC
 * Internet Gateway
+* 2 Public subnets
+* 2 Private subnets
+* 2 Database subnets
 
 
 ## Inputs
