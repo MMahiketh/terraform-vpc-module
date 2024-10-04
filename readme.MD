@@ -11,9 +11,9 @@ This module is going to create below resources.
 
 ## Inputs
 
-* ***project*** (Mandatory) `string` : User must provide their project name.
+* *project* (Mandatory) `string` : User must provide their project name.
 
-* ***environment*** (Mandatory) `string` : User must provide the envirmonment(PROD, DEV, QA).
+* *environment* (Mandatory) `string` : User must provide the envirmonment(PROD, DEV, QA).
 
 * *vpc_cidr_block* (Mandatory) `string` : User must provide CIDR for VPC.
 
@@ -48,11 +48,11 @@ This module is going to create below resources.
 
 ## Outputs
 
-* ***vpc_id*** : ID of the created VPC.
+* *vpc_id* : ID of the created VPC.
 
 * *igw_id* : ID of the created Internet Gateway.
 
-* ***all_azs_info*** : Info about all Availability Zones in the region.
+* *all_azs_info* : Info about all Availability Zones in the region.
 
 * *selected_azs* : List of Availability Zones that are selected.
 
