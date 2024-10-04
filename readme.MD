@@ -41,6 +41,7 @@ This module is going to create below resources.
 
 * *public_subnet_tags* (Optional) `map(string)` : User can supply tags to attach to created public subnet. By default it is empty.
 
+
 ## Outputs
 
 * *vpc_id* : ID of the created VPC.
