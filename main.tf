@@ -63,3 +63,14 @@ resource "aws_subnet" "database" {
     var.database_subnet_tags
   )
 }
+
+resource "aws_db_subnet_group" "default" {
+  name       = local.resource_name
+  subnet_ids = aws_subnet.database[*].id
+
+  tags = merge(
+    local.module_tags,
+    { Name = local.resource_name },
+    var.db_subnet_group_tags
+  )
+}

@@ -7,6 +7,7 @@ This module is going to create below resources.
 * 2 Public subnets
 * 2 Private subnets
 * 2 Database subnets
+* Database subnet group
 
 
 ## Inputs
@@ -31,6 +32,7 @@ This module is going to create below resources.
 * `public_subnet_tags` *map(string)* (Optional) : User can supply tags to attach to created Public subnet. By default it is empty.
 * `private_subnet_tags` *map(string)* (Optional) : User can supply tags to attach to created Private subnet. By default it is empty.
 * `database_subnet_tags` *map(string)* (Optional) : User can supply tags to attach to created Database subnet. By default it is empty.
+* `db_subnet_group_tags` *map(string)* (Optional) : User can supply tags to attach to created Database subnet group. By default it is empty.
 
 
 ## Outputs
@@ -43,3 +45,4 @@ This module is going to create below resources.
 * `public_subnet_ids` : List of Public subnet IDs.
 * `private_subnet_ids` : List of Private subnet IDs.
 * `database_subnet_ids` : List of Database subnet IDs.
+* `db_subnet_group_id` : ID of the created Database subnet group.

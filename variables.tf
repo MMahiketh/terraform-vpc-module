@@ -68,3 +68,8 @@ variable "database_subnet_tags" {
   type    = map(any)
   default = {}
 }
+
+variable "db_subnet_group_tags" {
+  type    = map(any)
+  default = {}
+}
