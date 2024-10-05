@@ -14,6 +14,7 @@ This module is going to create below resources.
 * Private Route table
 * Database Route table
 * Routes
+* Route table associations with subnets
 
 
 ## Inputs
@@ -65,3 +66,6 @@ This module is going to create below resources.
 * `public_route_id` :ID of the created Public route.
 * `private_route_id` :ID of the created Private route.
 * `database_route_id` :ID of the created Database route.
+* `public_route_association_id` : ID of the association of Public route table to Public subnet
+* `private_route_association_id` : ID of the association of private route table to private subnet
+* `database_route_association_id` : ID of the association of database route table to database subnet

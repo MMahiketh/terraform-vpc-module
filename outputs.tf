@@ -71,3 +71,15 @@ output "private_route_id" {
 output "database_route_id" {
   value = aws_route.database.id
 }
+
+output "public_route_association_id" {
+  value = aws_route_table_association.public.id
+}
+
+output "private_route_association_id" {
+  value = aws_route_table_association.private.id
+}
+
+output "database_route_association_id" {
+  value = aws_route_table_association.database.id
+}
