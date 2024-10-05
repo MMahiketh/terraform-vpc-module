@@ -8,6 +8,7 @@ This module is going to create below resources.
 * 2 Private subnets
 * 2 Database subnets
 * Database subnet group
+* Elastic IP
 
 
 ## Inputs
@@ -46,3 +47,4 @@ This module is going to create below resources.
 * `private_subnet_ids` : List of Private subnet IDs.
 * `database_subnet_ids` : List of Database subnet IDs.
 * `db_subnet_group_id` : ID of the created Database subnet group.
+* `eip_ip_address` : IP address Allocated by Elastic IP

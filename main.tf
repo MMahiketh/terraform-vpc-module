@@ -64,6 +64,7 @@ resource "aws_subnet" "database" {
   )
 }
 
+# Database subnet group resource for RDS
 resource "aws_db_subnet_group" "default" {
   name       = local.resource_name
   subnet_ids = aws_subnet.database[*].id
@@ -73,4 +74,9 @@ resource "aws_db_subnet_group" "default" {
     { Name = local.resource_name },
     var.db_subnet_group_tags
   )
+}
+
+# Elastic IP resource
+resource "aws_eip" "main" {
+  domain = "vpc"
 }
