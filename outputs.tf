@@ -47,3 +47,15 @@ output "eip_ip_address" {
 output "nat_id" {
   value = aws_nat_gateway.main.id
 }
+
+output "public_route_table_id" {
+  value = aws_route_table.public.id
+}
+
+output "private_route_table_id" {
+  value = aws_route_table.private.id
+}
+
+output "database_route_table_id" {
+  value = aws_route_table.database.id
+}

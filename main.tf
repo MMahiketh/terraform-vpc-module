@@ -79,6 +79,12 @@ resource "aws_db_subnet_group" "default" {
 # Elastic IP resource
 resource "aws_eip" "main" {
   domain = "vpc"
+
+  tags = merge(
+    local.module_tags,
+    { Name = local.resource_name },
+    var.eip_tags
+  )
 }
 
 # NAT resource
@@ -93,4 +99,35 @@ resource "aws_nat_gateway" "main" {
   )
 
   depends_on = [aws_internet_gateway.main]
+}
+
+# Route tables resource
+resource "aws_route_table" "public" {
+  vpc_id = aws_vpc.main.id
+
+  tags = merge(
+    local.module_tags,
+    { Name = "${local.resource_name}-public" },
+    var.public_route_table_tags
+  )
+}
+
+resource "aws_route_table" "private" {
+  vpc_id = aws_vpc.main.id
+
+  tags = merge(
+    local.module_tags,
+    { Name = "${local.resource_name}-private" },
+    var.private_route_table_tags
+  )
+}
+
+resource "aws_route_table" "database" {
+  vpc_id = aws_vpc.main.id
+
+  tags = merge(
+    local.module_tags,
+    { Name = "${local.resource_name}-database" },
+    var.database_route_table_tags
+  )
 }

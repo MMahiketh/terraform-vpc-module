@@ -10,6 +10,9 @@ This module is going to create below resources.
 * Database subnet group
 * Elastic IP
 * NAT Gateway
+* Public Route table
+* Private Route table
+* Database Route table
 
 
 ## Inputs
@@ -35,10 +38,14 @@ This module is going to create below resources.
 * `private_subnet_tags` *map(string)* (Optional) : User can supply tags to attach to created Private subnet. By default it is empty.
 * `database_subnet_tags` *map(string)* (Optional) : User can supply tags to attach to created Database subnet. By default it is empty.
 * `db_subnet_group_tags` *map(string)* (Optional) : User can supply tags to attach to created Database subnet group. By default it is empty.
+* `eip_tags` *map(string)* (Optional) : User can supply tags to attach to allocated Elastic IP. By default it is empty.
 * `nat_tags` *map(string)* (Optional) : User can supply tags to attach to created NAT. By default it is empty.
-
+* `public_route_table_tags` *map(string)* (Optional) : User can supply tags to attach to created Public route table. By default it is empty.
+* `private_route_table_tags` *map(string)* (Optional) : User can supply tags to attach to created Private route table. By default it is empty.
+* `database_route_table_tags` *map(string)* (Optional) : User can supply tags to attach to created Database route table. By default it is empty.
 
 ## Outputs
+
 * `vpc_id` : ID of the created VPC.
 * `igw_id` : ID of the created Internet Gateway.
 * `all_azs_info` : Info about all Availability Zones in the region.
@@ -51,3 +58,6 @@ This module is going to create below resources.
 * `db_subnet_group_id` : ID of the created Database subnet group.
 * `eip_ip_address` : IP address Allocated by Elastic IP(Public IP address).
 * `nat_id` : ID of the created NAT.
+* `public_route_table_id` : ID of the created Public route table.
+* `private_route_table_id` : ID of the created Private route table.
+* `database_route_table_id` : ID of the created Database route table.

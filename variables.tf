@@ -53,7 +53,7 @@ variable "subnet_cidrs" {
   }
 }
 
-#subnets
+#subnets vars
 variable "public_subnet_tags" {
   type    = map(any)
   default = {}
@@ -69,12 +69,36 @@ variable "database_subnet_tags" {
   default = {}
 }
 
+# Database subnet group vars
 variable "db_subnet_group_tags" {
   type    = map(any)
   default = {}
 }
 
+# Elastic IP vars
+variable "eip_tags" {
+  type = map(any)
+  default = {}
+}
+
+# NAT vars
 variable "nat_tags" {
+  type    = map(any)
+  default = {}
+}
+
+# Route table vars
+variable "public_route_table_tags" {
+  type    = map(any)
+  default = {}
+}
+
+variable "private_route_table_tags" {
+  type    = map(any)
+  default = {}
+}
+
+variable "database_route_table_tags" {
   type    = map(any)
   default = {}
 }
