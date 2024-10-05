@@ -77,7 +77,7 @@ variable "db_subnet_group_tags" {
 
 # Elastic IP vars
 variable "eip_tags" {
-  type = map(any)
+  type    = map(any)
   default = {}
 }
 
