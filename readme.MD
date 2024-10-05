@@ -13,6 +13,7 @@ This module is going to create below resources.
 * Public Route table
 * Private Route table
 * Database Route table
+* Routes
 
 
 ## Inputs
@@ -61,3 +62,6 @@ This module is going to create below resources.
 * `public_route_table_id` : ID of the created Public route table.
 * `private_route_table_id` : ID of the created Private route table.
 * `database_route_table_id` : ID of the created Database route table.
+* `public_route_id` :ID of the created Public route.
+* `private_route_id` :ID of the created Private route.
+* `database_route_id` :ID of the created Database route.

@@ -59,3 +59,15 @@ output "private_route_table_id" {
 output "database_route_table_id" {
   value = aws_route_table.database.id
 }
+
+output "public_route_id" {
+  value = aws_route.public.id  
+}
+
+output "private_route_id" {
+  value = aws_route.private.id  
+}
+
+output "database_route_id" {
+  value = aws_route.database.id  
+}
