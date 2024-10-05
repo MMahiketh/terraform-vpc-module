@@ -83,3 +83,7 @@ output "private_route_association_id" {
 output "database_route_association_id" {
   value = aws_route_table_association.database[*].id
 }
+
+output "peering_id" {
+  value = aws_vpc_peering_connection.this_default_vpcs[*].id
+}

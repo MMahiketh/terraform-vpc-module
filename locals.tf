@@ -14,4 +14,7 @@ locals {
   selected_az1       = local.all_azs_names[var.select_azs[0]]
   selected_az2       = local.all_azs_names[var.select_azs[1]]
   selected_azs_names = [local.selected_az1, local.selected_az2]
+
+  # Peering locals
+  is_peering_required = var.is_peering_required ? 1 : 0
 }

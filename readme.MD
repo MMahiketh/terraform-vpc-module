@@ -15,6 +15,7 @@ This module is going to create below resources.
 * Database Route table
 * Routes
 * Route table associations with subnets
+* Peering with default VPC(if Required)
 
 
 ## Inputs
@@ -45,6 +46,8 @@ This module is going to create below resources.
 * `public_route_table_tags` *map(string)* (Optional) : User can supply tags to attach to created Public route table. By default it is empty.
 * `private_route_table_tags` *map(string)* (Optional) : User can supply tags to attach to created Private route table. By default it is empty.
 * `database_route_table_tags` *map(string)* (Optional) : User can supply tags to attach to created Database route table. By default it is empty.
+* `is_peering_required` *bool* (Optional) : User can specify if he need peering with default vpc is required or not. By default it is set to false, no peering is created.
+* `vpc_peering_tags` *map(string)* (Optional) : User can supply tags to attach to created peering connection. By default it is empty.
 
 ## Outputs
 
@@ -69,3 +72,4 @@ This module is going to create below resources.
 * `public_route_association_id` : ID of the association of Public route table to Public subnet
 * `private_route_association_id` : ID of the association of private route table to private subnet
 * `database_route_association_id` : ID of the association of database route table to database subnet
+* `peering_id` : The ID of the created VPC Peering Connection.
