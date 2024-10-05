@@ -43,3 +43,7 @@ output "db_subnet_group_id" {
 output "eip_ip_address" {
   value = aws_eip.main.public_ip
 }
+
+output "nat_id" {
+  value = aws_nat_gateway.main.id
+}

@@ -73,3 +73,8 @@ variable "db_subnet_group_tags" {
   type    = map(any)
   default = {}
 }
+
+variable "nat_tags" {
+  type    = map(any)
+  default = {}
+}

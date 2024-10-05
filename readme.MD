@@ -9,6 +9,7 @@ This module is going to create below resources.
 * 2 Database subnets
 * Database subnet group
 * Elastic IP
+* NAT Gateway
 
 
 ## Inputs
@@ -34,6 +35,7 @@ This module is going to create below resources.
 * `private_subnet_tags` *map(string)* (Optional) : User can supply tags to attach to created Private subnet. By default it is empty.
 * `database_subnet_tags` *map(string)* (Optional) : User can supply tags to attach to created Database subnet. By default it is empty.
 * `db_subnet_group_tags` *map(string)* (Optional) : User can supply tags to attach to created Database subnet group. By default it is empty.
+* `nat_tags` *map(string)* (Optional) : User can supply tags to attach to created NAT. By default it is empty.
 
 
 ## Outputs
@@ -47,4 +49,5 @@ This module is going to create below resources.
 * `private_subnet_ids` : List of Private subnet IDs.
 * `database_subnet_ids` : List of Database subnet IDs.
 * `db_subnet_group_id` : ID of the created Database subnet group.
-* `eip_ip_address` : IP address Allocated by Elastic IP
+* `eip_ip_address` : IP address Allocated by Elastic IP(Public IP address).
+* `nat_id` : ID of the created NAT.
