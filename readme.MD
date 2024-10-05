@@ -16,6 +16,7 @@ This module is going to create below resources.
 * Routes
 * Route table associations with subnets
 * Peering with default VPC(if Required)
+* Peering routes in acceptor and requestor route tables
 
 
 ## Inputs
