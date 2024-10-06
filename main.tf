@@ -25,9 +25,10 @@ resource "aws_internet_gateway" "main" {
 resource "aws_subnet" "public" {
   count = length(var.subnet_cidrs)
 
-  vpc_id            = aws_vpc.main.id
-  cidr_block        = var.subnet_cidrs[count.index][0]
-  availability_zone = local.selected_azs_names[count.index]
+  vpc_id                  = aws_vpc.main.id
+  cidr_block              = var.subnet_cidrs[count.index][0]
+  availability_zone       = local.selected_azs_names[count.index]
+  map_public_ip_on_launch = true
 
   tags = merge(
     local.module_tags,
@@ -142,13 +143,13 @@ resource "aws_route" "public" {
 resource "aws_route" "private" {
   route_table_id         = aws_route_table.private.id
   destination_cidr_block = "0.0.0.0/0"
-  nat_gateway_id             = aws_nat_gateway.main.id
+  nat_gateway_id         = aws_nat_gateway.main.id
 }
 
 resource "aws_route" "database" {
   route_table_id         = aws_route_table.database.id
   destination_cidr_block = "0.0.0.0/0"
-  nat_gateway_id             = aws_nat_gateway.main.id
+  nat_gateway_id         = aws_nat_gateway.main.id
 }
 
 # Route table association resource
